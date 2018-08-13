@@ -1,6 +1,5 @@
-class Stopwatch extends React.Component {
-	constructor(display, results, copies) {
-		super();
+class Stopwatch {
+    constructor(display, results, copies) {
         this.running = false;
         this.display = display;
         this.reset();
@@ -71,20 +70,6 @@ class Stopwatch extends React.Component {
         this.printCopies();
     }
 
-    render() {
-		return React.createElement('div', {},
-			React.createElement('div', {className: 'controls'},
-				React.createElement('button', {onClick: () => this.start()}, 'start'),
-				React.createElement('button', {onClick: () => this.stop()}, 'stop'),
-				React.createElement('button', {onClick: () => this.reset()}, 'reset'),
-				React.createElement('button', {onClick: () => this.copy()}, 'copy'),),
-			React.createElement('div', {className:'stopwatch'}),
-			React.createElement('div', {className: 'outcome'},
-				React.createElement('button', {onClick: () => this.clear()}, 'clear'),
-				React.createElement('ul', {className:'results'}),),
-		)
-}
-
 }
 
 function pad0(value) {
@@ -96,7 +81,7 @@ function pad0(value) {
 }
 
 
-/*const stopwatch = new Stopwatch(document.querySelector('.stopwatch'), document.querySelector('.results'));
+const stopwatch = new Stopwatch(document.querySelector('.stopwatch'), document.querySelector('.results'));
 
 let startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
@@ -111,8 +96,7 @@ let copyButton = document.getElementById('copy');
 copyButton.addEventListener('click', () => stopwatch.copy());
 
 let clearButton = document.getElementById('clear');
-clearButton.addEventListener('click', () => stopwatch.clear());*/
+clearButton.addEventListener('click', () => stopwatch.clear());
 
-var element = React.createElement(Stopwatch);
-ReactDOM.render(element, document.getElementById('app'));
+
 
